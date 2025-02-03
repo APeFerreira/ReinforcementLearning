@@ -1,5 +1,7 @@
 # ReinforcementLearning
 
+This repository contains a collection of Jupyter notebooks covering fundamental and advanced topics in **Reinforcement Learning (RL)**. Each notebook introduces key RL concepts through theoretical explanations and hands-on implementations.
+
 ## 1. Markov Decision Process
 
 This notebook introduces the concept of a **Markov Decision Process (MDP)**, where an agent interacts with an environment and collects rewards based on states. Rewards are attached to states, such as +1 for a win, -1 for a loss, and 0 otherwise. The notebook includes:
