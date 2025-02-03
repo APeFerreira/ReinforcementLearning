@@ -57,3 +57,15 @@ Key topics covered:
 - Extending the approach to **Connect Four** and testing different neural network architectures.
 
 This notebook demonstrates how deep learning can be used to scale reinforcement learning to more complex environments.
+
+## 6. Bandit Algorithms
+
+This notebook covers **multi-armed bandit** algorithms, which are foundational for reinforcement learning in environments with a single state and uncertain rewards.
+
+Key topics covered:
+- **Multi-Armed Bandit problem**, where an agent selects among multiple options with unknown reward distributions.
+- **ε-Greedy Policy**, balancing exploration and exploitation.
+- **Optimism in the face of uncertainty**, analyzing agent behavior when ε = 0.
+- **Expected gain computation**, comparing theoretical and empirical results.
+
+This notebook introduces key strategies for solving bandit problems, which are widely used in decision-making and online learning scenarios.
