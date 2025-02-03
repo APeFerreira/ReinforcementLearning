@@ -212,8 +212,7 @@ class ValueIteration(PolicyEvaluation):
         for t in range(self.n_iter):
             
             values = self.values.copy()
-            values_next = self.rewards + self.gamma * self.values
-            values = dot_max(transition, values_next)
+            values = dot_max(transition, self.rewards + self.gamma * self.values)
             values[self.terminal] = 0
             
             diff = np.max(np.abs(values - self.values))
