@@ -69,3 +69,14 @@ Key topics covered:
 - **Expected gain computation**, comparing theoretical and empirical results.
 
 This notebook introduces key strategies for solving bandit problems, which are widely used in decision-making and online learning scenarios.
+
+## 7. Contextual Bandits
+
+This notebook explores **contextual bandits**, an extension of the multi-armed bandit problem where decisions depend on contextual information. The focus is on recommending **movies** based on available contextual data.
+
+Key topics covered:
+- **Movie recommendation task**, using contextual bandit algorithms.
+- **Handling a dataset of 1,037 movies** available in 2015.
+- **Adaptive decision-making**, where actions are optimized based on observed contexts.
+
+This notebook demonstrates how contextual bandits can be applied to personalized recommendations and adaptive learning tasks.
