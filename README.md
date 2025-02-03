@@ -45,3 +45,15 @@ Key topics covered:
 - Evaluation of **average game gains** over multiple runs.
 
 This notebook provides an interactive way to understand the impact of different exploration strategies on learning performance.
+
+## 5. Value Function Approximation
+
+This notebook explores **value function approximation** for large-scale reinforcement learning problems, where tabular methods become impractical. A **neural network with a single hidden layer** is used to estimate value functions.
+
+Key topics covered:
+- **Tic-Tac-Toe experiment**, applying function approximation to reinforcement learning.
+- Implementation of **policy** and **training functions** for learning.
+- Evaluation of agent performance after training.
+- Extending the approach to **Connect Four** and testing different neural network architectures.
+
+This notebook demonstrates how deep learning can be used to scale reinforcement learning to more complex environments.
