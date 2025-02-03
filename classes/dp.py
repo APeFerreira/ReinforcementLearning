@@ -7,7 +7,7 @@ Created on March 26, 2021
 import numpy as np
 from scipy import sparse
 
-from classes.agent import Agent
+from agent import Agent
 
 
 class PolicyEvaluation:
@@ -174,6 +174,10 @@ def dot_max(matrix: sparse.csr_matrix, vector: np.ndarray):
     """Get the dot-max product of a sparse matrix by a vector, replacing the sum by the max."""
     return np.maximum.reduceat(vector[matrix.indices] * matrix.data, matrix.indptr[:-1])
 
+def dot_min(matrix: sparse.csr_matrix, vector: np.ndarray):
+    """Get the dot-min product of a sparse matrix by a vector, replacing the sum by the min."""
+    return np.minimum.reduceat(vector[matrix.indices] * matrix.data, matrix.indptr[:-1])
+
 class ValueIteration(PolicyEvaluation):
     """Value iteration.
     
@@ -207,11 +211,10 @@ class ValueIteration(PolicyEvaluation):
         transition = self.transition.astype(bool)
         for t in range(self.n_iter):
             
-            # to be modified
-            # check the function dot_max above
-            # ---
             values = self.values.copy()
-            # ----
+            values_next = self.rewards + self.gamma * self.values
+            values = dot_max(transition, values_next)
+            values[self.terminal] = 0
             
             diff = np.max(np.abs(values - self.values))
             self.values = values
@@ -232,11 +235,15 @@ class ValueIteration(PolicyEvaluation):
         mask_adversary &= ~self.terminal
         for t in range(self.n_iter):
             
-            # to be modified
-            # check the functions dot_max and dot_min above
-            # ---
             values = self.values.copy()
-            # ----            
+            values_next = self.rewards + self.gamma * self.values
+            if self.player == 1:
+                values[mask_player] = dot_max(transition[mask_player], values_next)
+                values[mask_adversary] = dot_min(transition[mask_adversary], values_next)
+            else:
+                values[mask_player] = dot_min(transition[mask_player], values_next)
+                values[mask_adversary] = dot_max(transition[mask_adversary], values_next)
+            values[self.terminal] = 0
             
             diff = np.max(np.abs(values - self.values))
             self.values = values

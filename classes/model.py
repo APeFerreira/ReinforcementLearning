@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 from copy import deepcopy
 import itertools
 
-from classes.agent import Agent
+from agent import Agent
 from display import display_position, display_board
 
 
