@@ -9,8 +9,8 @@ from matplotlib import pyplot as plt
 from copy import deepcopy
 import itertools
 
-from agent import Agent
-from display import display_position, display_board
+from .agent import Agent
+from .display import display_position, display_board
 
 
 class Environment:

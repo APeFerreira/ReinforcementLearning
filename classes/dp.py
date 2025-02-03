@@ -7,7 +7,7 @@ Created on March 26, 2021
 import numpy as np
 from scipy import sparse
 
-from agent import Agent
+from .agent import Agent
 
 
 class PolicyEvaluation:
